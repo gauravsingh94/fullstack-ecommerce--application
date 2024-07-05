@@ -2,12 +2,14 @@ import express, { Request, Response } from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import AdminProductRoutes from "./routes/admin/Product";
+import UserProductRoutes from "./routes/admin/Product";
 dotenv.config();
 
 const app = express();
 
 app.use(express.json());
 app.use("/admin", AdminProductRoutes);
+app.use("/user", UserProductRoutes);
 
 const connectDB = async () => {
   try {
