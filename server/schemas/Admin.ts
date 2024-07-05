@@ -1,6 +1,6 @@
 import { Schema, model, Document } from "mongoose";
 
-interface IUser extends Document {
+interface IAdmin extends Document {
   name: string;
   email: string;
   password: string;
@@ -9,7 +9,7 @@ interface IUser extends Document {
   updatedAt?: Date;
 }
 
-const userSchema = new Schema<IUser>(
+const userSchema = new Schema<IAdmin>(
   {
     name: {
       type: String,
@@ -32,5 +32,5 @@ const userSchema = new Schema<IUser>(
   { timestamps: true }
 );
 
-const User = model<IUser>("User", userSchema);
+const User = model<IAdmin>("Admin", userSchema);
 export default User;
