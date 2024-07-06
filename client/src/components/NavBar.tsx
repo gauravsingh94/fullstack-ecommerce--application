@@ -1,12 +1,22 @@
+import { useState } from "react";
 import ProfileImageIcon from "./ProfileImageIcon";
+import CartCard from "./CartCard";
+import CartBottom from "./CartBottom";
 import CartIcon from "./CartIcon";
+
 const NavBar = () => {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
   const navLinks = [
     { label: "Products", url: "/" },
     { label: "About", url: "/about" },
     { label: "Services", url: "/services" },
     { label: "Contact", url: "/contact" },
   ];
+
+  const toggleCartDrawer = () => {
+    setIsCartOpen(!isCartOpen);
+  };
 
   return (
     <nav className="p-4">
@@ -25,12 +35,44 @@ const NavBar = () => {
           ))}
         </ul>
         <div className="flex justify-center items-center gap-4">
-          <button>
+          <button onClick={toggleCartDrawer}>
             <CartIcon numberOfItems={3} />
           </button>
           <button>
             <ProfileImageIcon />
           </button>
+        </div>
+      </div>
+      {/* Cart Drawer */}
+      <div
+        className={`fixed top-0 right-0 w-[300px] h-full bg-white shadow-lg transform transition-transform duration-300 ${
+          isCartOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <button
+          className="absolute top-4 right-4 text-black"
+          onClick={toggleCartDrawer}
+        >
+          X
+        </button>
+        <div className="flex flex-col h-full">
+          <div className="p-4">
+            <h2 className="text-xl font-semibold">Cart</h2>
+          </div>
+          <div className="flex-1 overflow-auto p-4">
+            <div className="mb-2">
+              <CartCard />
+            </div>
+            <div className="mb-2">
+              <CartCard />
+            </div>
+            <div className="mb-2">
+              <CartCard />
+            </div>
+          </div>
+          <div className="p-4 border-t">
+            <CartBottom />
+          </div>
         </div>
       </div>
     </nav>

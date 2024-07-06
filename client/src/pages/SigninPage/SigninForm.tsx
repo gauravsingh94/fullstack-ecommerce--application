@@ -14,8 +14,9 @@ const SigninForm = () => {
           placeholder="Password"
           className="mt-2 p-2 border-b border-gray-500 placeholder-slate-500"
         />
-        <button className="mt-2 p-2 bg-black text-white rounded">
-          Sign In
+
+        <button className="mt-2 p-2 bg-black text-white rounded hover:bg-white hover:text-black border border-black transition duration-300 ease-in-out">
+          Signin
         </button>
       </div>
     </div>

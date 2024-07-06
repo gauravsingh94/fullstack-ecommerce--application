@@ -2,9 +2,13 @@ import CartProductImage from "../../public/CartProductImage.png";
 
 const CartCard = () => {
   return (
-    <div className="flex  justify-between items-center px">
+    <div className="flex  justify-between items-center border-b">
       <div>
-        <img className="w-[80px] h-[96px]" src={CartProductImage} alt="CartImage" />
+        <img
+          className="w-[80px] h-[96px]"
+          src={CartProductImage}
+          alt="CartImage"
+        />
       </div>
       <div className="flex justify-between px-5 w-[80px] h-[32px] items-center border border-black rounded-sm">
         <button>+</button>

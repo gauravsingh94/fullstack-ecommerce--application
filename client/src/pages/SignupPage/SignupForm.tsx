@@ -27,8 +27,8 @@ const SignupForm = () => {
         />
         <RadioButton />
 
-        <button className="mt-2 p-2 bg-black text-white rounded">
-          Sign Up
+        <button className="mt-2 p-2 bg-black text-white rounded hover:bg-white hover:text-black border border-black transition duration-300 ease-in-out">
+          Signup
         </button>
       </div>
     </div>
