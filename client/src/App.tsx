@@ -1,4 +1,4 @@
-import SigninPage from "./pages/SigninPage";
+import SigninPage from "./pages/SigninPage/SigninPage";
 import "./App.css";
 
 function App() {
