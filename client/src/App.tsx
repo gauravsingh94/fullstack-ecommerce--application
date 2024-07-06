@@ -1,10 +1,10 @@
-import SigninPage from "./pages/SigninPage/SigninPage";
+import NavBar from "./components/NavBar";
 import "./App.css";
 
 function App() {
   return (
     <>
-      <SigninPage />
+      <NavBar/>
     </>
   );
 }
