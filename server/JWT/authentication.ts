@@ -12,7 +12,6 @@ export const authenticateUser = (
   next: NextFunction
 ) => {
   const token = req.header("Authorization")?.replace("Bearer ", "");
-
   if (!token) {
     return res.status(401).json({ message: "Authorization token is required" });
   }
@@ -25,6 +24,7 @@ export const authenticateUser = (
   } catch (error) {
     return res.status(401).json({ message: "Invalid token" });
   }
+
 };
 
 export const authenticateAdmin = (
@@ -33,14 +33,12 @@ export const authenticateAdmin = (
   next: NextFunction
 ) => {
   const token = req.header("Authorization")?.replace("Bearer ", "");
-  console.log(token);
   if (!token) {
     return res.status(401).json({ message: "Authorization token is required" });
   }
 
   try {
     const decoded = jwt.verify(token, adminSecret!);
-    console.log("decode: ", decoded);
     // @ts-ignore
     req.adminId = decoded;
     next();

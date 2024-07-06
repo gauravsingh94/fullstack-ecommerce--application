@@ -1,10 +1,10 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import AdminProductRoutes from "./routes/admin/Product";
 import AdminRegisterRoutes from "./routes/admin/Regsiter";
 import UserRegisterRoutes from "./routes/user/Register";
-import UserProductRoutes from "./routes/admin/Product";
+import UserProductRoutes from "./routes/user/Product";
 import UserCartRoutes from "./routes/user/CartItem";
 import UserOrderRoutes from "./routes/user/PlaceOrder";
 

@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
 import { authenticateUser } from "../../JWT/authentication";
-import Product, { IProduct } from "../../schemas/Product";
+import Product from "../../schemas/Product";
 const router = express.Router();
 
 router.get(
@@ -8,15 +8,13 @@ router.get(
   authenticateUser,
   async (req: Request, res: Response) => {
     const productId = req.params.id;
-
     try {
       const product = await Product.findById(productId);
-
-      if (!product) {
-        return res.status(404).json({ message: "Product not found" });
+      if (product) {
+        return res.json(product);
+      } else {
+        return res.status(404).json({ error: "Product not found." });
       }
-
-      res.json(product);
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch product", error });
     }

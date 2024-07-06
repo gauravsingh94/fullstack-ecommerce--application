@@ -15,6 +15,7 @@ router.get("/cart", authenticateUser, async (req: Request, res: Response) => {
 });
 
 router.post("/cart", authenticateUser, async (req: Request, res: Response) => {
+  console.log("request is comming till here.");
   try {
     const { productId, quantity } = req.body;
     // @ts-ignore
@@ -66,4 +67,3 @@ router.delete(
 );
 
 export default router;
-  
