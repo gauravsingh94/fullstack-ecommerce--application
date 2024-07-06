@@ -1,9 +1,9 @@
-import NavBar from "./components/NavBar";
 import "./App.css";
-
+import OrdersPage from "./pages/OrderDetailPageAdmin/OrderDetailPageAdmin";
 function App() {
   return (
     <>
+      <OrdersPage />
     </>
   );
 }
