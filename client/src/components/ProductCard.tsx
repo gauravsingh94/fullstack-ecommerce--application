@@ -7,7 +7,7 @@ const ProductCard = () => {
       </div>
       <h1 className="font-semibold">Light Beige Pillow</h1>
       <p className="font-semibold">$3.99</p>
-      <button className="mt-2 p-2 bg-black text-white rounded hover:bg-white">
+      <button className="mt-2 p-2 bg-black text-white rounded hover:bg-white hover:text-black border border-black transition duration-300 ease-in-out">
         Add to Cart
       </button>
     </div>
