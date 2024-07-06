@@ -16,13 +16,19 @@ router.post(
         price,
         category,
       };
-      if (image) productData.image = image;
+
+      if (image) {
+        productData.image = image;
+      }
 
       const newProduct: IProduct = new Product(productData);
       const savedProduct = await newProduct.save();
-      res.status(201).json(savedProduct);
+      res.json(savedProduct);
     } catch (error) {
-      res.status(500).json({ message: "Failed to add product", error });
+      console.error("Error adding product:", error);
+      if (!res.headersSent) {
+        res.status(500).json({ message: "Failed to add product", error });
+      }
     }
   }
 );
@@ -85,17 +91,18 @@ router.get(
   authenticateAdmin,
   async (req: Request, res: Response) => {
     const productId = req.params.id;
-
     try {
       const product = await Product.findById(productId);
-
-      if (!product) {
-        return res.status(404).json({ message: "Product not found" });
+      if (product) {
+        return res.json(product);
+      } else {
+        return res.status(404).json({ error: "Product not found." });
       }
-
-      res.json(product);
     } catch (error) {
-      res.status(500).json({ message: "Failed to fetch product", error });
+      console.error("Error fetching product:", error);
+      return res
+        .status(500)
+        .json({ message: "Failed to fetch product", error });
     }
   }
 );
