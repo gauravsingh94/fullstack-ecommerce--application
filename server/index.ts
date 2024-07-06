@@ -3,6 +3,9 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import AdminProductRoutes from "./routes/admin/Product";
 import UserProductRoutes from "./routes/admin/Product";
+import UserCartRoutes from "./routes/user/CartItem";
+import UserOrderRoutes from "./routes/user/PlaceOrder";
+
 dotenv.config();
 
 const app = express();
@@ -10,6 +13,8 @@ const app = express();
 app.use(express.json());
 app.use("/admin", AdminProductRoutes);
 app.use("/user", UserProductRoutes);
+app.use("/user", UserCartRoutes);
+app.use("/user", UserOrderRoutes);
 
 const connectDB = async () => {
   try {
