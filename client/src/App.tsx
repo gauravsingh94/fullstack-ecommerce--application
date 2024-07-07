@@ -1,10 +1,10 @@
-import ProductDetail from "./pages/ProductDetailPage/ProductDetailPage";
+import ProductsPageAdmin from "./pages/ProductPageAdmin/ProductPageAdmin";
 import "./App.css";
 
 function App() {
   return (
     <>
-      <ProductDetail />
+      <ProductsPageAdmin />
     </>
   );
 }
