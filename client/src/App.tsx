@@ -1,10 +1,10 @@
-import ProductsPageAdmin from "./pages/ProductPageAdmin/ProductPageAdmin";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import "./App.css";
 
 function App() {
   return (
     <>
-      <ProductsPageAdmin />
+      <ProfilePage />
     </>
   );
 }
