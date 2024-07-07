@@ -37,7 +37,6 @@ const orders: IOrder[] = [
   },
 ];
 
-// OrderItem component with props typing
 const OrderItem: React.FC<{ item: IOrderItem }> = ({ item }) => {
   return (
     <div className="order-item p-4 mb-2 border rounded shadow">
@@ -47,7 +46,6 @@ const OrderItem: React.FC<{ item: IOrderItem }> = ({ item }) => {
   );
 };
 
-// Order component with props typing
 const Order: React.FC<{ order: IOrder }> = ({ order }) => {
   return (
     <div className="order p-4 border rounded shadow mb-4">
@@ -65,7 +63,6 @@ const Order: React.FC<{ order: IOrder }> = ({ order }) => {
   );
 };
 
-// OrdersPage component
 const OrdersPage: React.FC = () => {
   return (
     <div className="orders-page p-8">

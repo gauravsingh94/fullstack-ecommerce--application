@@ -1,9 +1,10 @@
+import ProductDetail from "./pages/ProductDetailPage/ProductDetailPage";
 import "./App.css";
-import OrdersPage from "./pages/OrderDetailPageAdmin/OrderDetailPageAdmin";
+
 function App() {
   return (
     <>
-      <OrdersPage />
+      <ProductDetail />
     </>
   );
 }
